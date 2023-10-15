@@ -32,3 +32,25 @@ window.addEventListener("scroll", function() {
 //         document.querySelector(".current__mode > i").classList.add("bi-moon");
 //     }
 // });
+const title = document.getElementById("title-blog");
+let output = "";
+
+async function getDataFromAPI() {
+    const url = "https://jsonplaceholder.typicode.com/posts";
+    const res = await fetch(url);
+    const json = await res.json();
+    json.forEach(item => {
+        output += "<li>" + item.title + "</li>";
+    })
+    title.innerHTML = output;
+}
+getDataFromAPI();
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//   .then(response => response.json())
+//   .then(data)
+//   .catch(error => console.log('Error:', error));
+
+// data.foreach(item=>{
+// output+="<li>"+item.title+"</li>";
+// });
+// list.innerHTML = output;

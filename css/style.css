@@ -196,8 +196,8 @@ h6 {
 }
 .category-list .category-list--item a:hover {
   background: transparent;
-  border-color: darkblue;
-  color: darkblue;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .tag-list {
